@@ -1,8 +1,12 @@
+import { Outlet } from "react-router"
+import Navbar from "./components/layout/Navbar"
+
 function App() {
 
   return (
     <>
-      bismillah
+      <Navbar />
+      <Outlet />
     </>
   )
 }
