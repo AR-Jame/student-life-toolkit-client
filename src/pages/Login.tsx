@@ -1,4 +1,4 @@
-import Logo from "@/components/logo"
+import Logo from "@/assets/Icons/Logo"
 import { Link } from "react-router"
 import loginImage from "@/assets/images/login.jpg"
 import { LoginForm } from "@/components/modules/auth/LoginForm"

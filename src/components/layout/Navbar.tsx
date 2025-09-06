@@ -11,9 +11,10 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Link, NavLink } from "react-router"
-import Logo from "../logo"
+import Logo from "@/assets/Icons/Logo"
 import SignUpButton from "../ui/StyledButton/SignUpButton"
 import { useGetMe } from "@/queries/auth.queries"
+import { ModeToggle } from "./ModeToggle"
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -109,6 +110,7 @@ export default function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
+          <ModeToggle />
           {
             !isLoading &&
               data?.data ?

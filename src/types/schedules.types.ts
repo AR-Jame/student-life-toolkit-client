@@ -17,6 +17,6 @@ export interface ISchedule {
   notes: string
   subjectId: string | Partial<ISubject>
   title: string
-  createdAt: stringdf
+  createdAt: string
   updatedAt: string
 }

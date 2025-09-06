@@ -1,7 +1,7 @@
 import { useGetSchedules } from "@/queries/schedules.queries";
 import AddSchedule from "@/components/modules/Schedule/AddSchedule";
 import AddSubject from "@/components/modules/Schedule/AddSubject";
-import ScheduleAccordion from "@/components/ScheduleAccordian";
+import ScheduleAccordion from "@/components/modules/Schedule/ScheduleAccordian";
 
 
 const Schedules = () => {

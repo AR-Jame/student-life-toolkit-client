@@ -7,7 +7,7 @@ import {
 import { format } from "date-fns";
 import { Clock, PlusIcon } from "lucide-react";
 import type { ISchedule } from "@/types/schedules.types";
-import { Skeleton } from "./ui/skeleton";
+import { Skeleton } from "../../ui/skeleton";
 
 
 interface IProps {
@@ -17,7 +17,7 @@ interface IProps {
 
 export default function ScheduleAccordion({ data, isLoading }: IProps) {
   const uniqueDates = [...new Set(data?.map(schedule => schedule.date))];
-  const today = new Date().toISOString();
+  const today = new Date().toDateString();
 
   const orderedDates = [
     today,
@@ -57,7 +57,7 @@ export default function ScheduleAccordion({ data, isLoading }: IProps) {
           </AccordionPrimitive.Header>
           <AccordionContent className="text-muted-foreground pb-2">
             {(() => {
-              const filteredSchedules = data?.filter(e => e.date === item);
+              const filteredSchedules = data?.filter(e => new Date(e.date).toDateString() === new Date(item).toDateString());
 
               if (filteredSchedules?.length === 0) {
                 return (

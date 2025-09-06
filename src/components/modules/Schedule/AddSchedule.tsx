@@ -43,7 +43,7 @@ import type { ISubject } from "@/types/schedules.types";
 import { Textarea } from "@/components/ui/textarea";
 
 
-const subjectSchema = z
+const ScheduleSchema = z
     .object({
         title: z.string().min(4, { error: "Subject name is too short" }),
         date: z.date(),
@@ -61,8 +61,8 @@ const AddSchedule = () => {
     const { data, isLoading } = useGetSubjects();
     const addSchedule = useAddSchedule();
 
-    const form = useForm<z.infer<typeof subjectSchema>>({
-        resolver: zodResolver(subjectSchema),
+    const form = useForm<z.infer<typeof ScheduleSchema>>({
+        resolver: zodResolver(ScheduleSchema),
         defaultValues: {
             title: "",
             date: undefined,
@@ -76,7 +76,7 @@ const AddSchedule = () => {
         },
     });
 
-    const onSubmit = async (data: z.infer<typeof subjectSchema>) => {
+    const onSubmit = async (data: z.infer<typeof ScheduleSchema>) => {
         console.log(data);
         addSchedule.mutate({ data, reset: form.reset, setOpen })
     }
