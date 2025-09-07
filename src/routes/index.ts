@@ -1,5 +1,7 @@
 import App from "@/App";
 import Budget from "@/pages/Budget";
+import Exam from "@/pages/Exam";
+import ExamPage from "@/pages/ExamPage";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
@@ -23,6 +25,14 @@ export const router = createBrowserRouter([
             {
                 path: "budget",
                 Component: withAuthRoute(Budget)
+            },
+            {
+                path: "exam",
+                Component: withAuthRoute(Exam)
+            },
+            {
+                path: "exam/:id",
+                Component: withAuthRoute(ExamPage)
             },
         ]
     },

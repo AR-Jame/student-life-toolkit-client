@@ -10,6 +10,7 @@ import type { CategoryAggregation, TypeAggregation } from "@/types/budget.type";
  * 1. Update, delete transaction
  * 2. monthly and yearly data toggle
  * 3. pagination
+ * 4. checking responsiveness
  * */
 
 const Budget = () => {
