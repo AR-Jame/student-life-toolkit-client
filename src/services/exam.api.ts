@@ -19,3 +19,14 @@ export const submitExam = async ({ examId, payload }: { examId: string, payload:
     const { data } = await axiosInstance.patch(`/exam/submit/${examId}`, payload);
     return data
 }
+
+
+export const prevExam = async () => {
+    const { data } = await axiosInstance.get("/exam")
+    return data
+}
+
+export const prevExamDetails = async (examId: string) => {
+    const { data } = await axiosInstance.get(`/exam/${examId}`)
+    return data
+}

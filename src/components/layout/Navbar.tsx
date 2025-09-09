@@ -22,6 +22,7 @@ const navigationLinks = [
   { href: "/schedules", label: "Class schedules", role: "PRIVATE" },
   { href: "/budget", label: "Budget tracker", role: "PRIVATE" },
   { href: "/exam", label: "Exam Q&A", role: "PRIVATE" },
+  { href: "/planner", label: "Study planner", role: "PRIVATE" },
 ]
 
 export default function Navbar() {

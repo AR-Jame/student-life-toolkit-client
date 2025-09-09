@@ -2,7 +2,7 @@
 import type { examSchema } from "@/components/modules/Exam/GenerateExam"
 import { queryClient } from "@/main";
 import type { ExamAnswer } from "@/pages/ExamPage";
-import { generateExam, loadExamQuestion, submitExam } from "@/services/exam.api";
+import { generateExam, loadExamQuestion, prevExam, prevExamDetails, submitExam } from "@/services/exam.api";
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -51,8 +51,25 @@ export const useSubmitExam = () => {
 
 export const useGetExamQuestion = (examId: string) => {
     return useQuery({
-        queryKey: ["budgets"],
+        queryKey: ["examAttempt"],
         queryFn: () => loadExamQuestion(examId),
+        staleTime: 1000 * 60 * 5
+    })
+}
+
+
+export const useGetPrevExam = () => {
+    return useQuery({
+        queryKey: ["examAttempt"],
+        queryFn: () => prevExam(),
+        staleTime: 1000 * 60 * 5
+    })
+}
+
+export const useGetPrevExamDetails = (examId: string) => {
+    return useQuery({
+        queryKey: ["examAttempt"],
+        queryFn: () => prevExamDetails(examId),
         staleTime: 1000 * 60 * 5
     })
 }
